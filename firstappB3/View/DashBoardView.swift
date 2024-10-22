@@ -9,7 +9,20 @@ import SwiftUI
 
 struct DashBoardView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: .constant(0)) {
+            Text("Toutes les personnes")
+                .tabItem {
+                    Image(systemName: "person")
+                }
+            Text("Tous les dossiers")
+                .tabItem {
+                    Image(systemName: "folder")
+                }
+            Text("paramètres")
+                .tabItem {
+                    Image(systemName: "gear")
+                }
+        }
     }
 }
 

@@ -6,3 +6,30 @@
 //
 
 import Foundation
+class Utilisateur {
+    //attributs
+    var uid:String
+    var userName : String
+    var email : String
+    var birthday : Date?
+    var avatar : String?
+    
+    init() {
+        self.uid = ""
+        self.userName = ""
+        self.email = ""
+        self.birthday = Date()
+        self.avatar = ""
+    }
+    
+    
+    
+    //méthode
+    
+    
+    
+    
+    
+    
+    
+}
