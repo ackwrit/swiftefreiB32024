@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DashBoardView: View {
+    @StateObject var userVm = UserViewModel(id: FirebaseManager().getUUIUSerFirebase())
     var body: some View {
         TabView(selection: .constant(0)) {
             Text("Toutes les personnes")
@@ -18,7 +19,7 @@ struct DashBoardView: View {
                 .tabItem {
                     Image(systemName: "folder")
                 }
-            Text("paramètres")
+            SettingView(userVm : userVm)
                 .tabItem {
                     Image(systemName: "gear")
                 }

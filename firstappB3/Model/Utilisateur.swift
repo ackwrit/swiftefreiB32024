@@ -6,25 +6,43 @@
 //
 
 import Foundation
-class Utilisateur {
+struct Utilisateur : Identifiable {
     //attributs
-    var uid:String
-    var userName : String
-    var email : String
-    var birthday : Date?
-    var avatar : String?
+    var id : String
+    var _userName : String?
+    var _email : String?
+    var _birthday : Date?
+    var _avatar : String?
     
-    init() {
-        self.uid = ""
-        self.userName = ""
-        self.email = ""
-        self.birthday = Date()
-        self.avatar = ""
+    
+    
+    var userName : String {
+        return _userName ?? ""
+    }
+    
+    var email : String {
+        return _email ?? ""
+    }
+    
+    var birthday : Date {
+        return _birthday ?? Date()
+    }
+    var avatar : String {
+        return _avatar ?? ""
+    }
+    
+    init(id : String , dict : [String:Any]) {
+        self.id = id
+        self._userName = dict["USERNAME"] as? String
+        self._email = dict["EMAIL"] as? String
+        self._birthday = dict["BIRTHDAY"] as? Date
+        self._avatar = dict["AVATAR"] as? String
+        
     }
     
     
     
-    //méthode
+    
     
     
     
